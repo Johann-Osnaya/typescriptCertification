@@ -30,7 +30,7 @@ const addPatient = (patient: NewPatient): Patient => {
 const addEntry = (entry : newEntry, ID: string): Entry => {
     const id = uuid();
     if(entry.type === "HealthCheck") {
-        if(!entry.healthCheckRating || !entry.specialist !|| !entry.date ||!entry.description) {
+        if(entry.healthCheckRating === undefined || !entry.specialist !|| !entry.date ||!entry.description) {
           throw new Error('Missing information');
         }
     } else if (entry.type === "OccupationalHealthcare") {
