@@ -20,7 +20,7 @@ export interface Patient {
   entries: Array<Entry>
 }
 
-export type PatientFormValues = Omit<Patient, "id" | "entries">;
+export type PatientFormValues = Omit<Patient, "id">;
 
 interface BaseEntry {
   id: string;

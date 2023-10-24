@@ -37,16 +37,21 @@ const PatientInfo = ( ) => {
                 <h1>{patient.name} {gender}</h1>
                 ssh: {patient.ssn}<p></p>
                 occupation: {patient.occupation}
-
-                <h3>Entries</h3>
+                <br/>
+                <br/>
+                <EntryForm patient={patient} setter={setPatient}/>
+                {patient.entries[0] && 
+                <div>
+                    <h3>Entries</h3>
                 {patient.entries.map(entry => {
                     return (
-                        <Details data={entry} />
+                        <Details key={entry.id} data={entry} />
                         )
                     }
                 )}
+                    </div>}
                 <br/>
-                <EntryForm />
+
             </div>
         )
     }

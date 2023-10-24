@@ -44,6 +44,7 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
       ssn,
       dateOfBirth,
       gender,
+      entries: []
     });
   };
 
